@@ -1,3 +1,11 @@
+## My own notes
+
+I would like to create my own lore as I go along. So I pretend that I will create a fictional company called "Sudo Space" so everything related to groups, users, etc. will be related to that company.
+
+Everything will be created in the `eastus` region.
+
+Eventually I will create a web app that will be hosted in Azure and so on.
+
 # [Terraform on Azure with IaC DevOps and SRE | Real-World 25 Demos](https://links.stacksimplify.com/terraform-on-azure-with-iac-devops-sre)
 
 [![Image](https://stacksimplify.com/course-images/terraform-on-azure-with-iac-azure-devops-sre-1.png "Terraform on Azure with IaC DevOps and SRE | Real-World 25 Demos")](https://links.stacksimplify.com/terraform-on-azure-with-iac-devops-sre)
