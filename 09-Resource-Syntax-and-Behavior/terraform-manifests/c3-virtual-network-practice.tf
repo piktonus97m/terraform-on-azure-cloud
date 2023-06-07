@@ -8,7 +8,7 @@ resource "azurerm_virtual_network" "xorg-consulting-stage-vnet" {
   address_space = [ "10.0.0.0/16" ]
   tags = {
     "Name" = "xorg-consulting-stage-vnet-01",
-    "Environment" = "Stage"
+    "Environment" = "Dev"
   }
 }
 
@@ -17,7 +17,7 @@ resource "azurerm_virtual_network" "xorg-consulting-stage-vnet" {
 resource "azurerm_subnet" "xorg-consulting-stage-subnet" {
   name = "xorg-consulting-stage-subnet-01"
   resource_group_name = azurerm_resource_group.xorg_consulting_stage.name
-  virtual_network_name = azurerm_virtual_network.xorg-consulting-stage-vnet-01.name
+  virtual_network_name = azurerm_virtual_network.xorg-consulting-stage-vnet.name
   address_prefixes = [ "10.0.2.0/24" ]
 }
 
