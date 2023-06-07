@@ -28,7 +28,7 @@ resource "azurerm_public_ip" "xorg-consulting-stage-publicip" {
   resource_group_name = azurerm_resource_group.xorg_consulting_stage.name
   location = azurerm_resource_group.xorg_consulting_stage.location
   allocation_method = "Static"
-  tags = {
+  tags = { #This is map, since it has = sign.
     "Environment" = "Stage"
   }
 }
@@ -36,5 +36,13 @@ resource "azurerm_public_ip" "xorg-consulting-stage-publicip" {
 # Resource 5: Create a Network Interface
 
 resource "azurerm_network_interface" "xorg-consulting-stage-nic" {
-  
+  name = "xorg-consulting-stage-nic-01"
+  resource_group_name = azurerm_resource_group.xorg_consulting_stage.name
+  location = azurerm_resource_group.xorg_consulting_stage.location
+  ip_configuration { # This is internal block since it does not have the = sign.
+    name = "internal"
+    subnet_id = azurerm_subnet.xorg-consulting-stage-subnet.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_public_ip.xorg-consulting-stage-publicip.id
+  }
 }
